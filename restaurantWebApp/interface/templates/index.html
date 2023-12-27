@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="main-container">
+        <div class="title-container">
+            <h1 class="title">Restaurant App</h1>
+        </div>
+        <div class="menu-container">
+            <button class="load-button">Add a new order</button>
+            <button class="load-button">View the menu</button>
+            <button class="load-button">Show previous orders</button>
+        </div>
+    </div>
+{% endblock %}

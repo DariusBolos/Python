@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/catalogue.css") }}">
+    <script type="module" src="{{ url_for('static', filename="js/catalogue.js") }}"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="main-container">
+    {% for item in items %}
+        <p>{{ item.name }}</p>
+    {% endfor %}
+    </div>
+{% endblock %}

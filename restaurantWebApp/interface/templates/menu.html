@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+    <script type="module" src="{{ url_for('static', filename='js/menu.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="main-container">
+        {% for msg in get_flashed_messages() %}
+            <p>{{ msg }}</p>
+        {% endfor %}
+        <div class="button-container">
+            <button class="item-button">Add a new menu item</button>
+            <button class="display-button">Display the whole menu</button>
+        </div>
+        <div class="hidden-popup" id="popup">
+            <form action="#" class="item-form" method="POST">
+                <input type="text" placeholder="Name of the item" name="name">
+                <input type="number" placeholder="Price of the item" name="price">
+                <div class="radio-container">
+                    <div class="radio-button" id="radio-dish">
+                        <input type="radio" value="dish" name="option">
+                        <label>Dish</label>
+                    </div>
+                    <div class="radio-button" id="radio-drink">
+                        <input type="radio" value="drink" name="option">
+                        <label>Drink</label>
+                    </div>
+                </div>
+                <input type="submit" value="Submit" id="submit-button">
+            </form>
+        </div>
+    </div>
+{% endblock %}
