@@ -1,6 +1,4 @@
-/*body {*/
-/*    background-image: url("../src/background.jpg");*/
-/*}*/
+html{color-scheme: dark}
 
 .main-container {
     display: flex;
@@ -11,17 +9,45 @@
 .button-container {
     display: flex;
     flex-direction: row;
-    margin: 10vw;
     align-items: center;
+    margin: 5vw;
     gap: 5vw;
+    align-self: center;
+}
 
-    button {
-        cursor: pointer;
-        font-size: 15px;
-        border-radius: 20px;
-        min-width: 15vw;
-        min-height: 5vw;
-    }
+.button-container button {
+    background: none;
+    border: 2px solid forestgreen;
+    color: forestgreen;
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    min-height: 6rem;
+    min-width: 20rem;
+    transition: 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+
+.button-container button:hover {
+    color: #fff
+}
+
+.button-container button::before {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 100%;
+    left: 0;
+    background: forestgreen;
+    z-index: -1;
+    transition: 0.5s;
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+}
+
+.button-container button:hover::before {
+    height: 200%;
 }
 
 .hidden-popup {
@@ -33,7 +59,6 @@
     transform: translate(-50%, -50%) scale(0.1);
     visibility: hidden;
     padding: 2vw;
-    background-color: rgba(204, 204, 204, 0.9);
     border-radius: 20px;
     align-items: center;
     min-width: 30vw;
@@ -44,9 +69,10 @@
 
 .open-popup {
     visibility: visible;
-    top: 50%;
+    top: 60%;
     transform: translate(-50%, -50%) scale(1);
     justify-content: center;
+    border: 2px solid forestgreen;
 }
 
 .item-form{

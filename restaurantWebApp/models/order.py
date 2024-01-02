@@ -1,6 +1,6 @@
 from models.identifiable import Identifiable
 from flask_sqlalchemy import SQLAlchemy
-from database.models.tables import CookedDishTable, DrinkTable
+from data.models.tables import CookedDishTable, DrinkTable
 
 
 class Order(Identifiable):

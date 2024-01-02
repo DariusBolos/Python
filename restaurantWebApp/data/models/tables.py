@@ -7,12 +7,12 @@ class CookedDish(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100))
     price = db.Column(db.Integer)
-    portionSize = db.Column(db.Integer)
+    prepTime = db.Column(db.Integer)
 
-    def __init__(self, name, price, portionSize):
+    def __init__(self, name, price, prepTime):
         self.name = name
         self.price = price
-        self.portionSize = portionSize
+        self.prepTime = prepTime
 
     def __repr__(self):
         return f'New CookedDish with the Name: {self.name}'

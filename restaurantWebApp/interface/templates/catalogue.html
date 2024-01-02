@@ -7,8 +7,50 @@
 
 {% block body %}
     <div class="main-container">
-    {% for item in items %}
-        <p>{{ item.name }}</p>
-    {% endfor %}
+        <div class="dish-container">
+            <table>
+                <caption>Main course:</caption>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Preparation time</th>
+                    <th>Portion size</th>
+                </tr>
+
+                {% for dish in dishes %}
+                    <tr>
+                        <td>{{ dish.id }}</td>
+                        <td>{{ dish.name }}</td>
+                        <td>{{ dish.price }} Euro</td>
+                        <td>{{ dish.prepTime }} minutes</td>
+                        <td>350g</td>
+                    <tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="drink-container">
+            <table>
+                <caption>Drinks:</caption>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Alcohol</th>
+                    <th>Portion size</th>
+                </tr>
+
+                {% for drink in drinks %}
+                    <tr>
+                        <td>{{ drink.id }}</td>
+                        <td>{{ drink.name }}</td>
+                        <td>{{ drink.price }}</td>
+                        <td>{{ drink.alcohol }}</td>
+                        <td>200 ml</td>
+                    <tr>
+                {% endfor %}
+            </table>
+        </div>
     </div>
 {% endblock %}
