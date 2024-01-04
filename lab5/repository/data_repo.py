@@ -3,8 +3,8 @@ from operator import itemgetter
 
 
 class DataRepo:
-    def __init__(self, filename):
-        self.filename = filename
+    def __init__(self):
+        self.filename = None
 
     def save(self, objectList):
         with open(self.filename, 'wb') as file:
@@ -12,10 +12,13 @@ class DataRepo:
 
     def load(self):
         with open(self.filename, 'rb') as file:
-            return pickle.load(file)
+            try:
+                return pickle.load(file)
+            except EOFError:
+                print("No items were found in the database")
 
     def sort(self, objectList):
-        objectList = sorted(objectList, key=itemgetter('id'))
+        objectList = sorted(objectList)
         self.save(objectList)
 
     def add(self, obj):
@@ -39,8 +42,6 @@ class DataRepo:
         if id < len(objectList):
             self.remove(id)
             self.add(newObj)
-            print("Successfully updated the selected item")
             return
 
         print("Item with the given id was not found in the list")
-

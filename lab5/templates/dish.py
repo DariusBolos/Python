@@ -7,6 +7,3 @@ class Dish(Identifiable):
     def __init__(self, id, price):
         super().__init__(id)
         self.price = price
-
-    def __new__(cls):
-        raise Exception("Class is intended as an abstract class")
