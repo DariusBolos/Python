@@ -1,6 +1,6 @@
 from controller.menu_logic import displayMenu, addDish, addDrink, searchItem, showMenuUpdate, showMenuDelete
 from controller.customer_logic import getAllCustomers, addCustomer, updateCustomer, deleteCustomer
-from controller.order_logic import searchCustomerName, searchCustomerAddress, newOrder, getAllOrders
+from controller.order_logic import searchCustomerName, searchCustomerAddress, newOrder, displayOrders, addUserOrder
 
 
 def defaultInterface():
@@ -105,7 +105,7 @@ def orderInterface():
 
         options = {
             1: selectCustomerInterface,
-            2: getAllOrders,
+            2: displayOrders,
             0: defaultInterface
         }
 
@@ -124,7 +124,7 @@ def selectCustomerInterface():
     options = {
         1: searchCustomerName,
         2: searchCustomerAddress,
-        3: addCustomer,
+        3: addUserOrder,
         0: orderInterface
     }
 

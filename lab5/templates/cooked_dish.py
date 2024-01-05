@@ -9,5 +9,8 @@ class CookedDish(Dish):
     def __lt__(self, other):
         return self.id < other.id
 
+    def __iter__(self):
+        return iter(self.id, self.price)
+
     def __str__(self):
         return f'{self.id}    {self.price} Euro    {self.prepTime} Minutes'

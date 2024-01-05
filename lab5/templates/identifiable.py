@@ -1,9 +1,10 @@
-class Identifiable:
-    count = 0
+import random
 
+
+class Identifiable:
     def __init__(self, id):
         if type(id) is str:
             self.id = id
         else:
-            self.id = self.count
-            Identifiable.count += 1
+            self.id = random.randint(1, 1000)
+

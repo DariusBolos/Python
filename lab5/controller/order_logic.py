@@ -33,10 +33,13 @@ def searchCustomerAddress():
                 print(index, str(customers[index]))
 
 
-def newOrder():
-    print('\n', "Customers: ")
+def addUserOrder():
+    print('\n', "Customers:")
     displayData(2)
+    addCustomer()
 
+
+def newOrder():
     value = int(input("Enter the id of the customer you would like to assign the order to: "))
     customers = customerManager.load() if customerManager.load() else []
     customer = customers[value]
@@ -73,15 +76,19 @@ def newOrder():
                 print("ID not found")
 
     order = Order(1, customer.id, dishIds, drinkIds)
-    order.calculateCosts()
     orders = orderManager.load() if orderManager.load() else []
     orders.append(order)
     orderManager.sort(orders)
 
-    print(f"Order was placed successfully with the total cost of {order.total} Euro")
+    order.displayInvoice()
 
 
-def getAllOrders():
+def displayOrders():
     print("Orders: ")
     displayData(3)
+
+    orders = orderManager.load()
+    value = int(input("Enter the id of the order you would like to display the invoice for: "'\n'))
+    orders[value].displayInvoice()
+
 

@@ -1,6 +1,7 @@
 from repository.customer_repo import CustomerRepo
 from controller.data_logic import displayData
 from templates.customer import Customer
+from repository.order_repo import OrderRepo
 
 customerManager = CustomerRepo()
 
@@ -34,5 +35,13 @@ def updateCustomer():
 
 def deleteCustomer():
     getAllCustomers()
+    orderManager = OrderRepo()
+    orders = orderManager.load()
+    customers = customerManager.load()
     id = int(input("Enter the id of the customer you would like to delete: "))
+
+    for index in range(len(orders)):
+        if orders[index].customerId == customers[id].id:
+            orderManager.remove(index)
+
     customerManager.remove(id)
