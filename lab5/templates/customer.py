@@ -7,7 +7,7 @@ class Customer(Identifiable):
         self.name = name
         self.address = address
 
-    def __lt__(self, other):
+    def __lt__(self, other):  # redefining the lower than function, helpful by object comparison
         return self.name < other.name
 
     def __str__(self):

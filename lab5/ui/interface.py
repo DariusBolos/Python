@@ -3,7 +3,7 @@ from controller.customer_logic import getAllCustomers, addCustomer, updateCustom
 from controller.order_logic import searchCustomerName, searchCustomerAddress, newOrder, displayOrders, addUserOrder
 
 
-def defaultInterface():
+def defaultInterface():  # standard menu interface
     options = {
         1: menuInterface,
         2: customerInterface,
@@ -27,7 +27,7 @@ def defaultInterface():
         options[value]()
 
 
-def typeOfItem():
+def typeOfItem():  # menu that lets the user select the type of item they would like to add
     value = int(input("""
     Select the type of item you would like to add
         1 - Dish
@@ -44,7 +44,7 @@ def typeOfItem():
     menuInterface()
 
 
-def menuInterface():
+def menuInterface():  # selects an option from the menu
     while True:
         value = int(input("""
         Select an option available in the menu section:
@@ -70,7 +70,7 @@ def menuInterface():
         menuInterface()
 
 
-def customerInterface():
+def customerInterface():  # selects an option from the customer menu
     while True:
         value = int(input("""
            Select an option available in the customer section:
@@ -94,7 +94,7 @@ def customerInterface():
         customerInterface()
 
 
-def orderInterface():
+def orderInterface():  # chooses an option from the order menu
     while True:
         value = int(input("""
            Select an option available in the order section:
@@ -112,7 +112,7 @@ def orderInterface():
         options[value]()
 
 
-def selectCustomerInterface():
+def selectCustomerInterface():  # chooses an option when searching for a customer
     value = int(input("""
          Choose an option available from the following options :
             1 - Search for a customer by name

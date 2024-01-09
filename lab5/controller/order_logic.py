@@ -9,7 +9,7 @@ orderManager = OrderRepo()
 customerManager = CustomerRepo()
 
 
-def searchCustomerName():
+def searchCustomerName():  # searches a customer by his or her name
     name = input("Enter the name of the item you would like to search: ")
     customers = customerManager.load() if customerManager.load() else []
     print('\n')
@@ -22,7 +22,7 @@ def searchCustomerName():
                 ids.append(customers[index].id)
 
 
-def searchCustomerAddress():
+def searchCustomerAddress():  # searches a customer by the address of residence
     address = input("Enter the name of the item you would like to search: ")
     customers = customerManager.load() if customerManager.load() else []
     print('\n')
@@ -33,7 +33,7 @@ def searchCustomerAddress():
                 print(index, str(customers[index]))
 
 
-def addUserOrder():
+def addUserOrder():  # adds a new user in the order page
     print('\n', "Customers:")
     displayData(2)
     addCustomer()
@@ -83,7 +83,7 @@ def newOrder():
     order.displayInvoice()
 
 
-def displayOrders():
+def displayOrders():  # displays all previous orders
     print("Orders: ")
     displayData(3)
 

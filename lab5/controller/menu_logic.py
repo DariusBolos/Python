@@ -8,7 +8,7 @@ dishManager = CookedDishRepo()
 drinkManager = DrinkRepo()
 
 
-def displayMenu():
+def displayMenu():  # displays all dishes and drinks
     print("Dishes: ")
     displayData(0)
 
@@ -16,7 +16,7 @@ def displayMenu():
     displayData(1)
 
 
-def addDish():
+def addDish():  # adds a new dish
     name = input("Name of the dish: ")
     price = int(input("Price of the dish: "))
     prepTime = int(input("Estimated preparation time of the dish: "))
@@ -27,7 +27,7 @@ def addDish():
     dishManager.sort(dishes)
 
 
-def addDrink():
+def addDrink():  # adds a new dish
     name = input("Name of the drink: ")
     price = int(input("Price of the drink: "))
     alcohol = input("Alcohol percentage in the drink: ")
@@ -38,7 +38,7 @@ def addDrink():
     drinkManager.sort(drinks)
 
 
-def searchItem():
+def searchItem():  # lets the user search for an item
     name = input("Enter the name of the item you would like to search: ")
     dishes = dishManager.load() if dishManager.load() else []
     drinks = drinkManager.load() if drinkManager.load() else []
@@ -60,7 +60,7 @@ def searchItem():
     print("No items found that include the given name")
 
 
-def updateItem():
+def updateItem():  # updates an item from the menu
     type = int(input("""
     Enter the type of the item you would like to update: 
         1 - Dish
@@ -88,7 +88,7 @@ def showMenuUpdate():
     updateItem()
 
 
-def deleteItem():
+def deleteItem():  # deletes an item from the menu
     type = int(input("""
         Enter the type of the item you would like to delete: 
             1 - Dish

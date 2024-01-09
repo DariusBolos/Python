@@ -6,12 +6,12 @@ from repository.order_repo import OrderRepo
 customerManager = CustomerRepo()
 
 
-def getAllCustomers():
+def getAllCustomers():  # gets all customers from the database
     print("Customers: ")
     displayData(2)
 
 
-def addCustomer():
+def addCustomer():  # adds a new customer
     name = input("Name of the customer: ")
     address = input("Address of the customer: ")
 
@@ -21,7 +21,7 @@ def addCustomer():
     customerManager.sort(customers)
 
 
-def updateCustomer():
+def updateCustomer():  # lets the user update a customer
     getAllCustomers()
     listID = int(input("Enter the id of the item you would like to update: "))
     customers = customerManager.load()
@@ -33,7 +33,7 @@ def updateCustomer():
     customerManager.update(listID, customer)
 
 
-def deleteCustomer():
+def deleteCustomer():  # deletes a customer from the database
     getAllCustomers()
     orderManager = OrderRepo()
     orders = orderManager.load()

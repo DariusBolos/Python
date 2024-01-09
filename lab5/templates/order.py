@@ -57,7 +57,7 @@ class Order(Identifiable):
         invoice = self.__generateInvoice()
         print(invoice)
 
-    def __lt__(self, other):
+    def __lt__(self, other):  # redefining the lower than function, helpful by object comparison
         return self.id < other.id
 
     def __str__(self):

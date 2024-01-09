@@ -1,5 +1,6 @@
 import pickle
-from operator import itemgetter
+
+# inherited class that manages every repo with crud
 
 
 class DataRepo:
