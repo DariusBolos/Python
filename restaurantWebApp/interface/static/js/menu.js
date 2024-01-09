@@ -2,20 +2,14 @@ const itemButton = document.querySelector(".item-button")
 const radioButtons = document.querySelectorAll(".radio-button")
 const displayMenuButton = document.querySelector(".display-button")
 const popup = document.querySelector("#popup")
-const buttonContainer = document.querySelector(".button-container")
 
 function displayPopup(){
     popup.classList.add("open-popup")
-    // buttonContainer.style.opacity = '0.2'
 }
 
-function hidePopup(){
-    popup.classList.remove("open-popup")
-    buttonContainer.style.opacity = '1'
-}
 
 function loadMenu(){
-    const path = window.location.href + "catalogue"
+    const path = `${window.location.href}catalogue`
     window.location.replace(path)
 }
 

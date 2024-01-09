@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 from flask_sqlalchemy import SQLAlchemy
 import os
 
@@ -19,4 +19,3 @@ def checkEmptyFields(*args):
         if not arg:
             return False
     return True
-

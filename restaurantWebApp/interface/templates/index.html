@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block head %}
+    <title>Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
     <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
 {% endblock %}
@@ -12,8 +13,8 @@
         </div>
         <div class="menu-container">
             <button class="load-button">Add a new order</button>
-            <button class="load-button">View the menu</button>
-            <button class="load-button">Show previous orders</button>
+            <button class="load-button">Manage the menu</button>
+            <button class="load-button">Manage customers</button>
         </div>
     </div>
 {% endblock %}

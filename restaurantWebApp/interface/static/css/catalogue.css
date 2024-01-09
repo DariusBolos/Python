@@ -12,7 +12,8 @@ body {
 }
 
 .dish-container,
-.drink-container{
+.drink-container,
+.customers-container{
     max-width: 100%;
     overflow-x: auto;
 }
@@ -49,3 +50,7 @@ tr:nth-of-type(2n) {
     background: hsl(0 0% 0% / 0.1);
 }
 
+.remove-button {
+    cursor: pointer;
+    min-height: 3vw
+}

@@ -40,7 +40,7 @@ class Order(db.Model):
     drinkIds = db.Column(db.String(100))
     total = db.Column(db.Integer)
 
-    def __init__(self, customerId, dishIds, drinkIds):
+    def __init__(self, customerId, dishIds, drinkIds, total):
         self.customerId = customerId
         self.dishIds = dishIds
         self.drinkIds = drinkIds
