@@ -1,0 +1,6 @@
+darius,programming,10
+mihai,algebra,8
+ana,programming,7
+bogdan,analysis,8
+andra,programming,9
+george,algebra,4
