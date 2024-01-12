@@ -81,6 +81,7 @@ def updateItem():  # updates an item from the menu
         alcohol = input("Enter the new alcohol percentage of the drink: ")
         drink = Drink(name, price, alcohol)
         drinkManager.update(id, drink)
+        
 
 
 def showMenuUpdate():

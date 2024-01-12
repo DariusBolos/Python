@@ -1,8 +1,8 @@
-const wrapper = document.querySelector(".customer-container")
-const selectButton = document.querySelector(".select-button")
-const listElements = document.querySelectorAll("li")
-const searchbar = document.querySelector(".searchbar")
-const options = document.querySelector(".options")
+const wrapper = document.querySelector(".customer-container"),
+    selectButton = document.querySelector(".select-button"),
+    listElements = document.querySelectorAll("li"),
+    searchbar = document.querySelector(".searchbar"),
+    options = document.querySelector(".options");
 let listValues = []
 
 
@@ -28,7 +28,7 @@ function searchByInput() {
     let values = []
     let searchedValue = searchbar.value.toLowerCase()
     values = listValues.filter(data => {
-        return data.toLowerCase().startsWith(searchedValue)
+        return data.toLowerCase().includes(searchedValue)
     }).map(data => `<li>${data}</li>`).join("")
     options.innerHTML = values ? values : `<p>Customer not found</p>`
     const newListElements = document.querySelectorAll("li")

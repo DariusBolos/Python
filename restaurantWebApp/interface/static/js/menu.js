@@ -4,7 +4,7 @@ const displayMenuButton = document.querySelector(".display-button")
 const popup = document.querySelector("#popup")
 
 function displayPopup(){
-    popup.classList.add("open-popup")
+    popup.classList.add("open-popup");
 }
 
 
@@ -17,21 +17,29 @@ itemButton.addEventListener("click", () => displayPopup())
 displayMenuButton.addEventListener("click", () => loadMenu())
 
 function removeField(){
-    const parent = document.querySelector(".radio-container")
-    const child = document.querySelector(".option-field")
-    if(child)
-        parent.removeChild(child)
+    const child = document.querySelector(".option-field");
+
+    if (child) {
+        child.remove()
+    }
 }
 
 function createField(type){
-    const parent = document.querySelector(".radio-container")
-    const textField = document.createElement("INPUT")
+    const parent = document.querySelector(".radio-container");
+    const textField = document.createElement("INPUT");
+    const placeholder = {
+        dish: "Estimated preparation time",
+        drink: "Alcohol Percentage"
+    }
+
     textField.classList.add("option-field")
     textField.type = "number"
     textField.name = "item-info"
 
+
+
     if(type === "dish"){
-        textField.placeholder = "Estimated preparation time"
+        textField.placeholder =
         textField.id = "dish-field"
         parent.appendChild(textField)
     }
@@ -44,7 +52,7 @@ function createField(type){
 
 radioButtons.forEach((radioButton, index) => {
     const values = ["dish", "drink"]
-    radioButton.addEventListener("click", () => {
+    radioButton.addEventListener("click", (e) => {
         radioButton.children[0].checked = true
         removeField()
         createField(values[index])
